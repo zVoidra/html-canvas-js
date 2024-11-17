@@ -74,6 +74,7 @@ function router() {
   const routes = {
     "/": "home",
     "/sol": "sol",
+    "/clock": "clock",
   };
 
   const path = window.location.pathname;
