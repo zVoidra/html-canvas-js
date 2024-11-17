@@ -76,6 +76,7 @@ function router() {
     "/sol": "sol",
     "/clock": "clock",
     "/panorama": "panorama",
+    "/lines": "lines",
   };
 
   const path = window.location.pathname;
