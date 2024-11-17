@@ -1,5 +1,3 @@
-import "./index.css";
-
 async function loadScript(jsFilePath) {
   // Check if the script is already loaded
   let existingScript = document.querySelector(`script[src="${jsFilePath}"]`);
