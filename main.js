@@ -1,4 +1,3 @@
-import "./index.css";
 import * as HomePage from "./source/pages/home/home.js";
 import * as SolPage from "./source/pages/sol/sol.js";
 import * as ClockPage from "./source/pages/clock/clock.js";
