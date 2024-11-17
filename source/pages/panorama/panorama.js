@@ -1,4 +1,22 @@
-export function init() {}
+export const HTML = `
+  <h1>Panorama</h1>
+  <canvas id="canvas" width="800" height="200"></canvas>
+`;
+
+export function init() {
+  imgW = img.width * scale;
+  imgH = img.height * scale;
+
+  if (imgW > canvasXSize) {
+    x = canvasXSize - imgW;
+  }
+
+  clearX = Math.max(imgW, canvasXSize);
+  clearY = Math.max(imgH, canvasYSize);
+
+  ctx = document.getElementById("canvas").getContext("2d");
+  setInterval(draw, speed);
+}
 
 const img = new Image();
 
@@ -16,22 +34,6 @@ let x = 0;
 let clearX;
 let clearY;
 let ctx;
-
-img.onload = () => {
-  imgW = img.width * scale;
-  imgH = img.height * scale;
-
-  if (imgW > canvasXSize) {
-    x = canvasXSize - imgW;
-  }
-
-  clearX = Math.max(imgW, canvasXSize);
-  clearY = Math.max(imgH, canvasYSize);
-
-  ctx = document.getElementById("canvas").getContext("2d");
-
-  return setInterval(draw, speed);
-};
 
 function draw() {
   ctx.clearRect(0, 0, clearX, clearY);

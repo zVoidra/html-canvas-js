@@ -1,7 +1,11 @@
 const sun = new Image();
 const moon = new Image();
 const earth = new Image();
-const ctx = document.getElementById("canvas").getContext("2d");
+
+export const HTML = `
+  <h1>Sol</h1>
+  <canvas id="canvas" width="300" height="300"></canvas>
+`;
 
 export function init() {
   sun.src = "canvas_sun.png";
@@ -12,6 +16,7 @@ export function init() {
 }
 
 function draw() {
+  const ctx = document.getElementById("canvas").getContext("2d");
   ctx.globalCompositeOperation = "destination-over";
   ctx.clearRect(0, 0, 300, 300);
 

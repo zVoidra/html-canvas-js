@@ -1,3 +1,12 @@
+export const HTML = `
+  <h1>Clock</h1>
+  <canvas id="canvas" width="150" height="150"></canvas>
+`;
+
+export function init() {
+  window.requestAnimationFrame(clock);
+}
+
 function clock() {
   const now = new Date();
   const canvas = document.getElementById("canvas");
@@ -101,5 +110,3 @@ function clock() {
 
   window.requestAnimationFrame(clock);
 }
-
-window.requestAnimationFrame(clock);
