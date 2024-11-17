@@ -1,5 +1,3 @@
-import parkImage from "./assets/capitan_meadows_yosemite_national_park.jpg";
-
 export const HTML = `
   <h1>Panorama</h1>
   <canvas id="canvas" width="800" height="200"></canvas>
@@ -22,7 +20,7 @@ export function init() {
 
 const img = new Image();
 
-img.src = parkImage;
+img.src = "capitan_meadows_yosemite_national_park.jpg";
 const canvasXSize = 800;
 const canvasYSize = 200;
 const speed = 30;
