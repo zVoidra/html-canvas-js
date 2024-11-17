@@ -72,21 +72,21 @@ async function loadContent(path) {
 
 function router() {
   const routes = {
-    "/": "home",
-    "/sol": "sol",
-    "/clock": "clock",
-    "/panorama": "panorama",
-    "/lines": "lines",
+    "": "home",
+    home: "home",
+    sol: "sol",
+    clock: "clock",
+    panorama: "panorama",
+    lines: "lines",
   };
 
-  const path = window.location.pathname;
-  const route = routes[path] || "home";
+  const hash = window.location.hash.slice(1); // Remove the '#' from the hash
+  const route = routes[hash] || "home";
   loadContent(route);
 }
 
 function navigate(path) {
-  window.history.pushState({}, "", path);
-  router();
+  window.location.hash = path; // Update the hash
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -95,10 +95,10 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("a[data-link]").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      const href = e.target.getAttribute("href");
+      const href = e.target.getAttribute("href").slice(1); // Remove the leading '#'
       navigate(href);
     });
   });
 });
 
-window.addEventListener("popstate", router);
+window.addEventListener("hashchange", router);
