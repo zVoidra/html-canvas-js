@@ -1,3 +1,5 @@
+import sunImageSrc from "../../../public/canvas_sun.png";
+
 const sun = new Image();
 const moon = new Image();
 const earth = new Image();
@@ -8,7 +10,7 @@ export const HTML = `
 `;
 
 export function init() {
-  sun.src = "canvas_sun.png";
+  sun.src = sunImageSrc;
   earth.src = "canvas_earth.png";
   moon.src = "canvas_moon.png";
   window.requestAnimationFrame(draw);
