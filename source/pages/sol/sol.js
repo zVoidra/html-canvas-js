@@ -10,9 +10,9 @@ export const HTML = `
 `;
 
 export function init() {
-  sun.src = sunImageSrc;
-  earth.src = "canvas_earth.png";
-  moon.src = "canvas_moon.png";
+  sun.src = "public/canvas_sun.png";
+  earth.src = "public/canvas_earth.png";
+  moon.src = "public/canvas_moon.png";
   window.requestAnimationFrame(draw);
   console.log("init");
 }
