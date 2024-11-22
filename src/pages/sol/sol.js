@@ -1,6 +1,6 @@
-import sunImageSrc from "../../../public/canvas_sun.png";
-import earthImageSrc from "../../../public/canvas_earth.png";
-import moonImageSrc from "../../../public/canvas_moon.png";
+import sunImageSrc from "../../assets/canvas_sun.png";
+import earthImageSrc from "../../assets/canvas_earth.png";
+import moonImageSrc from "../../assets/canvas_moon.png";
 
 const sun = new Image();
 const moon = new Image();
