@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/learning-html-canvas-js/",
+  base: "https://zvoidra.github.io/learning-html-canvas-js/",
 });
