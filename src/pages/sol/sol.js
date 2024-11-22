@@ -1,7 +1,3 @@
-import sunImageSrc from "../../assets/canvas_sun.png";
-import earthImageSrc from "../../assets/canvas_earth.png";
-import moonImageSrc from "../../assets/canvas_moon.png";
-
 const sun = new Image();
 const moon = new Image();
 const earth = new Image();
@@ -12,9 +8,9 @@ export const HTML = `
 `;
 
 export function init() {
-  sun.src = sunImageSrc;
-  earth.src = earthImageSrc;
-  moon.src = moonImageSrc;
+  sun.src = "canvas_sun.png";
+  earth.src = "canvas_earth.png";
+  moon.src = "canvas_moon.png";
   window.requestAnimationFrame(draw);
   console.log("init");
 }
