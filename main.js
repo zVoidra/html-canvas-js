@@ -13,8 +13,7 @@ const routes = {
 };
 
 async function loadContent(route) {
-  const module = routes[route] || HomePage;
-
+  const module = routes[route] || routes["/"];
   document.getElementById("app").innerHTML = module.HTML;
 
   if (module.init) {
@@ -25,23 +24,27 @@ async function loadContent(route) {
 }
 
 function router() {
-  const hash = window.location.hash.slice(1); // Remove '#' from the hash
-  loadContent(hash);
+  const hash = window.location.hash.slice(2);
+  loadContent(hash || "/");
 }
 
 function navigate(path) {
-  window.location.hash = path; // Update hash in URL
-  router();
+  window.location.hash = `#/${path}`;
 }
-// Initialize router on page load and hash change
-window.addEventListener("DOMContentLoaded", router);
-window.addEventListener("hashchange", router);
 
-// Attach navigation event to links
-document.querySelectorAll("a[data-link]").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const href = e.target.getAttribute("href").slice(1); // Remove leading '/'
-    navigate(href);
+function attachLinkEvents() {
+  document.querySelectorAll("a[data-link]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = e.target.getAttribute("href").slice(2);
+      navigate(href);
+    });
   });
+}
+
+// Initialize router on page load and hash change
+window.addEventListener("DOMContentLoaded", () => {
+  router();
+  attachLinkEvents();
 });
+window.addEventListener("hashchange", router);
