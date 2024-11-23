@@ -20,7 +20,7 @@ export function init() {
 
 const img = new Image();
 
-img.src = "capitan_meadows_yosemite_national_park.jpg";
+img.src = "public/capitan_meadows_yosemite_national_park.jpg";
 const canvasXSize = 800;
 const canvasYSize = 200;
 const speed = 30;
